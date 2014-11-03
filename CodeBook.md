@@ -74,14 +74,14 @@ The tidy data set projecttidy_nan.txt that is output from the run_analysis.R cod
 Following is the step step transformation of the raw data into the tidy data.
 
 1. Set the working directory and read the raw data files (Step 1)
-2. Give column names activity and subject files (Step 1)
+2. Give column names in the activity and subject files (Step 1)
 3. column bind X, y, and subject; Row bind Train and test (Step 1)
-4. Merge data with activity labels (Step 1)
-5. Drop the numeric label column (Step 1)
+4. Merge data with activity labels (Step 1) using the merge function.
+5. Drop the numeric label column (Step 1). Only the activity names column is kept.
 6. Keep the feature names and coerce them as characters (Step 4)
 7. Build the variable names vector and assign the names (Step 3, 4)
 8. Generate boolean vector based on whether the column name has "mean()" or "std()" in it (Step 2)
-9. Subset columns keeping only the mean and standard deviation columns (Step 2)
-10. Determine the means of columns for unique combinations of subject and activity labels (Step 5)
+9. Subset columns keeping only the mean and standard deviation columns (Step 2) selecting columns based on the prior step.
+10. Determine the means of columns for unique combinations of subject and activity labels (Step 5). Used the ddply() function of the dplyr package. 
 11. Write the tidy data set into a file
 
